@@ -11,8 +11,8 @@ I recommend to use Pathogen (http://www.vim.org/scripts/script.php?script_id=233
 
 To enable syntax checker functionality you should install following:
 
-# Vim-plugin syntastic: https://github.com/scrooloose/syntastic
-# Clcc complier: http://clcc.sourceforge.net/
+* Vim-plugin syntastic: https://github.com/scrooloose/syntastic
+* Clcc complier: http://clcc.sourceforge.net/
 
 == Authors
 
