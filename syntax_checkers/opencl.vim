@@ -19,13 +19,13 @@ function! SyntaxCheckers_opencl_GetLocList()
     let makeprg = 'clcc '.shellescape(expand('%'))
 
     " NVIDIA driver format
-    let errorformat =  '%E:%l:%c: error: %m,%-Z%p^\[ ~\]%#,'.
-                      \'%W:%l:%c: warning: %m,%-Z%p^\[ ~\]%#,'.
-                      \'%I:%l:%c: note: %m,%-Z%p^\[ ~\]%#,'
+    let errorformat =   '%E:%l:%c: error: %m,%-Z%p^\[ ~\]%#,'.
+                       \'%W:%l:%c: warning: %m,%-Z%p^\[ ~\]%#,'.
+                       \'%I:%l:%c: note: %m,%-Z%p^\[ ~\]%#,'
     " AMD driver format
-    let errorformat .= '%E"%f"\, line %l: error: %m,%-Z%p^,'.
-                      \'%E"%f"\, line %l: error: %m,%+C%.%#,%-Z%p^,'.
-                      \'%W"%f"\, line %l: warning: %m,%-C%.%#,'
+    let errorformat .=  '%E"%f"\, line %l: catastrophic error: %m,%+C%.%#,%-Z%p^,'.
+                       \'%E"%f"\, line %l: error: %m,%+C%.%#,%-Z%p^,'.
+                       \'%W"%f"\, line %l: warning: %m,%-C%.%#,'
     " Other lines should be hidden
     let errorformat .= '%-G%.%#'
 
