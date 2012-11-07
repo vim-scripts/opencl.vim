@@ -25,7 +25,7 @@ function! SyntaxCheckers_opencl_GetLocList()
     " AMD driver format
     let errorformat .= '%E"%f"\, line %l: error: %m,%-Z%p^,'.
                       \'%E"%f"\, line %l: error: %m,%+C%.%#,%-Z%p^,'.
-                      \'%W"%f"\, line %l: warning: %m,%-C%.%#,'.
+                      \'%W"%f"\, line %l: warning: %m,%-C%.%#,'
     " Other lines should be hidden
     let errorformat .= '%-G%.%#'
 
