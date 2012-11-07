@@ -17,12 +17,18 @@ endif
 
 function! SyntaxCheckers_opencl_GetLocList()
     let makeprg = 'clcc '.shellescape(expand('%'))
+
+    " NVIDIA driver format
     let errorformat =  '%E:%l:%c: error: %m,%-Z%p^\[ ~\]%#,'.
                       \'%W:%l:%c: warning: %m,%-Z%p^\[ ~\]%#,'.
-                      \'%I:%l:%c: note: %m,%-Z%p^\[ ~\]%#,'.
-                      \'%E"%f"\, line %l: error: %m,%+C %.%#,%-C %.%#,%-Z%p^,'.
-                      \'%E"%f"\, line %l: error: %m,%-C %.%#,%-Z%p^,'.
-                      \'%W"%f"\, line %l: warning: %m,%-C%.%#'
+                      \'%I:%l:%c: note: %m,%-Z%p^\[ ~\]%#,'
+    " AMD driver format
+    let errorformat .= '%E"%f"\, line %l: error: %m,%-Z%p^,'.
+                      \'%E"%f"\, line %l: error: %m,%+C%.%#,%-Z%p^,'.
+                      \'%W"%f"\, line %l: warning: %m,%-C%.%#,'.
+    " Other lines should be hidden
+    let errorformat .= '%-G%.%#'
+
 	let loclist = SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
 
     "the file name isnt in the output so stick in the buf num manually
