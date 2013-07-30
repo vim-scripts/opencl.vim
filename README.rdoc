@@ -1,0 +1,21 @@
+== SYNOPSIS:
+
+Vim-opencl is a vim plugin that enables syntax highlighting and syntax checker for OpenCL (Open Computing Language) files (*.cl).
+
+== Installation
+
+I recommend to use Pathogen (http://www.vim.org/scripts/script.php?script_id=2332) to organize Vim plugins. In this case you should do following:
+
+  cd ~/.vim/bundle
+  git clone git://github.com/petRUShka/vim-opencl.git
+
+To enable syntax checker functionality you should install following:
+
+* Vim-plugin syntastic: https://github.com/scrooloose/syntastic
+* Clcc complier: http://clcc.sourceforge.net/
+
+== Authors
+
+Originally, this was fork of http://www.vim.org/scripts/script.php?script_id=3157 with some little additions. That script provides syntax highlight for OpenCL (Open Computing Language) syntax files (*.cl).
+
+Additionally I added other part of vim plugin such as syntax checker, autodetection file-type, load C-style indent and etc...

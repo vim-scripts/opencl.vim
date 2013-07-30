@@ -1,0 +1,8 @@
+tags
+*.log
+*.swp
+*.swo
+*.dump
+*~
+*.py*
+*.o
